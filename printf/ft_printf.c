@@ -1,28 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 20:22:13 by biniesta          #+#    #+#             */
-/*   Updated: 2024/10/06 22:40:21 by biniesta         ###   ########.fr       */
+/*   Created: 2024/10/16 15:11:54 by biniesta          #+#    #+#             */
+/*   Updated: 2024/10/16 18:59:20 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_printf(const char *format, ...)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
 }
-// int	main(void)
-// {
-// 	printf("%d\n", ft_strlen('sdjghb'));
-// 	return (0);
-// }

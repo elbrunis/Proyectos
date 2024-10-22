@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 17:29:57 by biniesta          #+#    #+#             */
-/*   Updated: 2024/10/06 23:02:36 by biniesta         ###   ########.fr       */
+/*   Created: 2024/10/16 15:08:12 by biniesta          #+#    #+#             */
+/*   Updated: 2024/10/16 15:11:43 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
-// int	main(void)
-// {
-// 	printf("%d\n", ft_isdigit('b'));
-// 	return (0);
-// }
+# include <stdlib.h>
+# include <unistd.h>
+
+int	ft_printf(const char *format, ...);
+
+#endif FT_PRINTF_H
