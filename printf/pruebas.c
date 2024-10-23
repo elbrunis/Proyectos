@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   pruebas.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 15:08:12 by biniesta          #+#    #+#             */
-/*   Updated: 2024/10/23 19:56:12 by biniesta         ###   ########.fr       */
+/*   Created: 2024/10/23 13:03:12 by biniesta          #+#    #+#             */
+/*   Updated: 2024/10/23 20:11:14 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <stdarg.h>
-# include <unistd.h>
-# include "libft/libft.h"
-# include <stdio.h>
-
-int	ft_printf(const char *format, ...);
-void    ft_putchr(char c);
-
-#endif
+int    main()
+{
+    char c = 'hola';
+    ft_printf("El caracter que estoy probando a escribir es: %c\n", c);
+    
+    return(0);
+}
