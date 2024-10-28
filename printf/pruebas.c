@@ -6,7 +6,7 @@
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:03:12 by biniesta          #+#    #+#             */
-/*   Updated: 2024/10/23 20:11:14 by biniesta         ###   ########.fr       */
+/*   Updated: 2024/10/28 20:02:56 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 int    main()
 {
-    char c = 'hola';
-    ft_printf("El caracter que estoy probando a escribir es: %c\n", c);
+    int num;
     
+    num = 45873;
+    ft_printf("Mi propia funcion hace: %p\n", &num);
+    printf("la version original hace:%p\n", &num);
     return(0);
 }

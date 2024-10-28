@@ -6,7 +6,7 @@
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 15:11:54 by biniesta          #+#    #+#             */
-/*   Updated: 2024/10/23 20:00:15 by biniesta         ###   ########.fr       */
+/*   Updated: 2024/10/24 19:36:21 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,18 @@ int	ft_printf(const char *format, ...)
 			if (*format == 'c')
             {
                 char c = (char)va_arg(args, int);
-				ft_putchr(c);
+				ft_putchar_fd(c, 1);
             }
+			if(*format == 's')
+			{
+				char *str = va_arg(args, char*);
+				ft_putstr_fd(str, 1);
+			}
+			if(*format == 'p')
+			{
+				void *ptr = va_arg(args, void*);
+				ft_putptr(ptr);
+			}
 		}
         else
             write(1, format, 1);
