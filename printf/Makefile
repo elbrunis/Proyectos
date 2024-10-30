@@ -1,6 +1,6 @@
 NAME = pruebas
 
-SRC = pruebas.c ft_printf.c ft_putptr.c
+SRC = pruebas.c ft_printf.c ft_putptr.c ft_putint.c ft_putuint.c
 
 LIBFT_DIR = libft
 LIBFT = -L$(LIBFT_DIR) -lft

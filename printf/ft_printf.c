@@ -6,7 +6,7 @@
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 15:11:54 by biniesta          #+#    #+#             */
-/*   Updated: 2024/10/24 19:36:21 by biniesta         ###   ########.fr       */
+/*   Updated: 2024/10/29 17:04:26 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,16 @@ int	ft_printf(const char *format, ...)
 			{
 				void *ptr = va_arg(args, void*);
 				ft_putptr(ptr);
+			}
+			if(*format == 'd' || *format == 'i')
+			{
+				int num = va_arg(args, int);
+				count += ft_putint(num);
+			}
+			if(*format == 'u')
+			{
+				unsigned int num =(unsigned int)va_arg(args, int);
+				count += ft_putuint(num);
 			}
 		}
         else
