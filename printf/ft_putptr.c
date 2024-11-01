@@ -6,7 +6,7 @@
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:31:59 by biniesta          #+#    #+#             */
-/*   Updated: 2024/10/28 20:00:53 by biniesta         ###   ########.fr       */
+/*   Updated: 2024/11/01 18:26:41 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	put_hex(unsigned long num)
 {
-	char	hex[16] = "0123456789abcdef";
+	const char	hex[16] = "0123456789abcdef";
 
 	if (num >= 16)
 	{
@@ -38,13 +38,12 @@ static int	count_hex(unsigned long num)
 
 int	ft_putptr(void *ptr)
 {
-	unsigned long num;
-	int count;
+	unsigned long	num;
+	int				count;
 
 	num = (unsigned long)ptr;
 	write(1, "0x", 2);
 	count = 2;
-
 	if (num == 0)
 	{
 		write(1, "0", 1);

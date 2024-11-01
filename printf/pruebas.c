@@ -6,7 +6,7 @@
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:03:12 by biniesta          #+#    #+#             */
-/*   Updated: 2024/10/30 12:45:39 by biniesta         ###   ########.fr       */
+/*   Updated: 2024/11/01 23:05:58 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,20 @@ int	main(void)
 {
 	int value;
 	int value1;
-	unsigned int num; 
+	char		c = 'Z';
+    char		*str = "Hello, World!";
+    int			decimal = -12345;
+    unsigned int udecimal = 3000000000;
+    int			hex = 255;
+    void		*ptr = &decimal;
 
-	num = 43433;
-	value = ft_printf("el   Mio:%u\n", num);
-	value1 = printf("original:%x\n", num);
+    value = ft_printf("Character: %c, String: %s, Decimal: %d, Unsigned: %u, Hex (lower): %x, Hex (upper): %X, Pointer: %p, Percent: %%\n", 
+              c, str, decimal, udecimal, hex, hex, ptr);
+	value1 = printf("Character: %c, String: %s, Decimal: %d, Unsigned: %u, Hex (lower): %x, Hex (upper): %X, Pointer: %p, Percent: %%\n", 
+              c, str, decimal, udecimal, hex, hex, ptr);
 
-	printf("Valor devuelto en el mio: %d\n", value);
+	ft_printf("Valor devuelto en el mio: %d\n", value);
 	printf("Valor devuelto en el otro: %d\n", value1);
 
 	return (0);
-	
 }
