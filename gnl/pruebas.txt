@@ -1,0 +1,15 @@
+tenemos a:
+- line 
+- save 
+
+
+save = llamamos a read_until_enter((archivo a leer) y (donde lo vamos a guardar))
+  
+    read_until_enter
+    - temp(variable temporal donde almacenaremos lo que leemos de fd)
+
+    1 iniciamos save (si no existe) a 1
+    2 creamos memoria para temp
+    3 leemos lo que hay en fd y lo almacenamos en temp
+        -le ponemos el null de el final jeje
+    4 LO QUE HICIMOS EN TEMP LO CONCATENAMOS CON SAVE Y LIBERAMOS LA MEMORIA DE TEMP
