@@ -2,7 +2,7 @@
 
 int main()
 {
-    int fd = open("/home/biniesta/Proyectos/proyectos/gnl/pruebas.txt", O_RDONLY);  // Cambia "archivo_de_prueba.txt" a tu archivo de prueba
+    int fd = open("/home/biniesta/Proyectos/proyectos/gnl/test.txt", O_RDONLY);  // Cambia "archivo_de_prueba.txt" a tu archivo de prueba
     if (fd == -1)
     {
         perror("Error al abrir el archivo");
