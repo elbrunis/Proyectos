@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 13:26:25 by biniesta          #+#    #+#             */
-/*   Updated: 2024/11/28 18:44:26 by biniesta         ###   ########.fr       */
+/*   Created: 2024/10/02 18:44:40 by biniesta          #+#    #+#             */
+/*   Updated: 2024/10/06 14:24:45 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_put_str(char *str)
+void	ft_putnbr_fd(int n, int fd)
 {
-	while (*str)
+	if (n == -2147483648)
 	{
-		write(1, str, 1);
-		str++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	write(fd, &"0123456789"[n % 10], 1);
 }
-
-int	ft_putstr(char *str)
-{
-	int	count;
-
-	count = 0;
-	if (str == NULL)
-	{
-		ft_put_str("(null)");
-		return (6);
-	}
-	while (*str)
-	{
-		write(1, str, 1);
-		count++;
-		str++;
-	}
-	return (count);
-}
+// int main()
+// {
+//     ft_putnbr_fd('1' , 1);
+//     return(0);
+// }

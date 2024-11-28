@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 13:26:25 by biniesta          #+#    #+#             */
-/*   Updated: 2024/11/28 18:44:26 by biniesta         ###   ########.fr       */
+/*   Created: 2024/09/16 15:35:00 by biniesta          #+#    #+#             */
+/*   Updated: 2024/10/06 22:53:41 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_put_str(char *str)
+int	ft_isalpha(int c)
 {
-	while (*str)
-	{
-		write(1, str, 1);
-		str++;
-	}
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
+	return (0);
 }
+// int	main(void)
+// {
+// 	int	result;
 
-int	ft_putstr(char *str)
-{
-	int	count;
-
-	count = 0;
-	if (str == NULL)
-	{
-		ft_put_str("(null)");
-		return (6);
-	}
-	while (*str)
-	{
-		write(1, str, 1);
-		count++;
-		str++;
-	}
-	return (count);
-}
+// 	result = ft_isalpha('a');
+// 	printf("%d", result);
+// 	return (0);
+// }

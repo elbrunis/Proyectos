@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 13:26:25 by biniesta          #+#    #+#             */
-/*   Updated: 2024/11/28 18:44:26 by biniesta         ###   ########.fr       */
+/*   Created: 2024/10/02 13:38:26 by biniesta          #+#    #+#             */
+/*   Updated: 2024/10/05 14:13:13 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_put_str(char *str)
+void	ft_putstr_fd(char *s, int fd)
 {
-	while (*str)
+	while (*s)
 	{
-		write(1, str, 1);
-		str++;
+		write(fd, s, 1);
+		s++;
 	}
 }
-
-int	ft_putstr(char *str)
-{
-	int	count;
-
-	count = 0;
-	if (str == NULL)
-	{
-		ft_put_str("(null)");
-		return (6);
-	}
-	while (*str)
-	{
-		write(1, str, 1);
-		count++;
-		str++;
-	}
-	return (count);
-}
+// int main()
+// {
+//     ft_putstr_fd("Prueba", 1);
+//     return (0);
+// }

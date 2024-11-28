@@ -6,7 +6,7 @@
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:31:59 by biniesta          #+#    #+#             */
-/*   Updated: 2024/11/01 18:26:41 by biniesta         ###   ########.fr       */
+/*   Updated: 2024/11/28 18:58:09 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ int	ft_putptr(void *ptr)
 	int				count;
 
 	num = (unsigned long)ptr;
+	if (ptr == NULL)
+	{
+		ft_put_str("(nil)");
+		return (5);
+	}
 	write(1, "0x", 2);
 	count = 2;
 	if (num == 0)

@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 13:26:25 by biniesta          #+#    #+#             */
-/*   Updated: 2024/11/28 18:44:26 by biniesta         ###   ########.fr       */
+/*   Created: 2024/09/16 18:16:55 by biniesta          #+#    #+#             */
+/*   Updated: 2024/10/06 01:10:42 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_put_str(char *str)
+int	ft_isascii(int c)
 {
-	while (*str)
-	{
-		write(1, str, 1);
-		str++;
-	}
+	return (c >= 0 && c <= 127);
 }
-
-int	ft_putstr(char *str)
-{
-	int	count;
-
-	count = 0;
-	if (str == NULL)
-	{
-		ft_put_str("(null)");
-		return (6);
-	}
-	while (*str)
-	{
-		write(1, str, 1);
-		count++;
-		str++;
-	}
-	return (count);
-}
+// int	main(void)
+// {
+// 	printf("%d\n", ft_isascii('.'));
+// 	return (0);
+// }
