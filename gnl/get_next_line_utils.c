@@ -6,7 +6,7 @@
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:58:43 by biniesta          #+#    #+#             */
-/*   Updated: 2024/11/14 18:55:58 by biniesta         ###   ########.fr       */
+/*   Updated: 2024/12/02 22:17:30 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,20 +56,22 @@ void	*ft_calloc(unsigned long int nmemb, unsigned long int size)
 	return (memory);
 }
 
-char	*ft_strcat(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	char *new;
-	unsigned long int i;
-
-	new = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (!new || !s1|| !s2)
+	char				*new;
+	unsigned long int	i;
+	long int			s1len;
+	
+	s1len = ft_strlen(s1);
+	new = malloc((s1len + ft_strlen(s2) + 1) * sizeof(char));
+	if (!new || !s1 || !s2)
 		return (NULL);
 	i = -1;
 	while (s1[++i] != '\0')
 		new[i] = s1[i];
 	i = -1;
 	while (s2[++i] != '\0')
-		new[ft_strlen(s1) + i] = s2[i];
-	new[ft_strlen(s1) + i] = '\0';
+		new[s1len + i] = s2[i];
+	new[s1len + i] = '\0';
 	return (new);
 }

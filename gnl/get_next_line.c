@@ -6,7 +6,7 @@
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:53:55 by biniesta          #+#    #+#             */
-/*   Updated: 2024/11/28 20:51:46 by biniesta         ###   ########.fr       */
+/*   Updated: 2024/12/02 22:15:00 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*free_and_join(char *save, char *read)
 {
 	char	*join;
 
-	join = ft_strcat(save, read);
+	join = ft_strjoin(save, read);
 	free(save);
 	return (join);
 }
@@ -57,7 +57,7 @@ char	*put_rest(char *save)
 		free(save);
 		return (NULL);
 	}
-	rest = ft_calloc(sizeof(char), (ft_strlen(save) - i + 2));
+	rest = ft_calloc(sizeof(char), (ft_strlen(save) - i));
 	if (!rest)
 		return (NULL);
 	i++;
@@ -90,7 +90,7 @@ char	*read_file(int fd, char *save)
 		}
 		new_read[len] = '\0';
 		save = free_and_join(save, new_read);
-		if (ft_strchar(save, '\n'))
+		if (len == 0 || ft_strchar(save, '\n'))
 			break ;
 	}
 	free(new_read);
