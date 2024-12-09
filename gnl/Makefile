@@ -10,14 +10,13 @@ all: $(NAME)
 #crea el programa
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
-	@rm -f *.o
 
 #crea los objetos
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)./
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)

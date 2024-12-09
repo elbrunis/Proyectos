@@ -6,7 +6,7 @@
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:58:43 by biniesta          #+#    #+#             */
-/*   Updated: 2024/12/02 22:17:30 by biniesta         ###   ########.fr       */
+/*   Updated: 2024/12/09 21:03:25 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,21 @@ char	*ft_strjoin(char *s1, char *s2)
 {
 	char				*new;
 	unsigned long int	i;
-	long int			s1len;
-	
+	size_t				s1len;
+	size_t				s2len;
+
+	if (!s1 && !s2)
+		return (NULL);
 	s1len = ft_strlen(s1);
-	new = malloc((s1len + ft_strlen(s2) + 1) * sizeof(char));
+	s2len = ft_strlen(s2);
+	new = calloc((s1len + s2len + 1), sizeof(char));
 	if (!new || !s1 || !s2)
 		return (NULL);
 	i = -1;
-	while (s1[++i] != '\0')
+	while (++i < s1len)
 		new[i] = s1[i];
 	i = -1;
-	while (s2[++i] != '\0')
+	while (++i < s2len)
 		new[s1len + i] = s2[i];
 	new[s1len + i] = '\0';
 	return (new);

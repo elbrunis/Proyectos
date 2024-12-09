@@ -5,20 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 12:58:31 by biniesta          #+#    #+#             */
-/*   Updated: 2024/12/02 22:01:16 by biniesta         ###   ########.fr       */
+/*   Created: 2024/11/13 13:53:55 by biniesta          #+#    #+#             */
+/*   Updated: 2024/12/09 21:24:02 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE
-# define GET_NEXT_LINE
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 100
 # endif
 
 # include <fcntl.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -33,4 +32,5 @@ void				ft_bzero(void *str, unsigned long int n);
 unsigned long int	ft_strlen(char *str);
 void				*ft_calloc(unsigned long int nmemb, unsigned long int size);
 char				*ft_strjoin(char *s1, char *s2);
+
 #endif

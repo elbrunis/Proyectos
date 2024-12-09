@@ -6,7 +6,7 @@
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:53:55 by biniesta          #+#    #+#             */
-/*   Updated: 2024/12/02 22:15:00 by biniesta         ###   ########.fr       */
+/*   Updated: 2024/12/09 21:04:28 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ char	*free_and_join(char *save, char *read)
 	free(save);
 	return (join);
 }
+
 char	*create_line(char *save)
 {
 	char	*line;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	if (save[i] == '\0')
@@ -43,11 +44,12 @@ char	*create_line(char *save)
 		line[i] = '\n';
 	return (line);
 }
+
 char	*put_rest(char *save)
 {
 	char	*rest;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	while (save[i] != '\n' && save[i] != '\0')
@@ -68,6 +70,7 @@ char	*put_rest(char *save)
 	free(save);
 	return (rest);
 }
+
 char	*read_file(int fd, char *save)
 {
 	char	*new_read;
@@ -79,7 +82,7 @@ char	*read_file(int fd, char *save)
 	if (!new_read)
 		return (NULL);
 	len = 1;
-	while (len > 0)
+	while (len > 0 && !ft_strchar(save, '\n'))
 	{
 		len = read(fd, new_read, BUFFER_SIZE);
 		if (len == -1)
@@ -90,8 +93,6 @@ char	*read_file(int fd, char *save)
 		}
 		new_read[len] = '\0';
 		save = free_and_join(save, new_read);
-		if (len == 0 || ft_strchar(save, '\n'))
-			break ;
 	}
 	free(new_read);
 	return (save);
@@ -99,8 +100,8 @@ char	*read_file(int fd, char *save)
 
 char	*get_next_line(int fd)
 {
-	char *line;
-	static char *save;
+	char		*line;
+	static char	*save;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
