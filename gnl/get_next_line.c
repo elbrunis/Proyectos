@@ -6,7 +6,7 @@
 /*   By: biniesta <biniesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:53:55 by biniesta          #+#    #+#             */
-/*   Updated: 2024/12/09 21:04:28 by biniesta         ###   ########.fr       */
+/*   Updated: 2024/12/21 15:42:54 by biniesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*save;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	save = read_file(fd, save);
 	if (!save)
